@@ -36,8 +36,7 @@ public:
     };
 
     void beSigned(Bureaucrat &v);
+    friend std::ostream &operator<<(std::ostream &out, const Form &b);
 };
-
-std::ostream &operator<<(std::ostream &out, const Form &b);
 
 #endif

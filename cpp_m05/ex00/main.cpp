@@ -1,29 +1,37 @@
-#include "Bureaucrat.hpp"
 #include <iostream>
+
+#include "Bureaucrat.hpp"
 
 int main()
 {
-	try
-	{
-		Bureaucrat bob("Bob", 2);
-		std::cout << bob << std::endl;
-		bob.incrementGrade();
-		std::cout << "After increment: " << bob << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << "Exception caught: " << e.what() << std::endl;
-	}
+    try
+    {
+        Bureaucrat alice("Alice", 2);
+        Bureaucrat bob("Bob", 150);
 
-	try
-	{
-		Bureaucrat top("Top", 1);
-		top.incrementGrade();
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << "Exception caught: " << e.what() << std::endl;
-	}
+        std::cout << alice << std::endl;
+        std::cout << bob << std::endl;
 
-	return 0;
+        alice.incrementGrade();
+        bob.decrementGrade();
+
+        std::cout << alice << std::endl;
+        std::cout << bob << std::endl;
+    }
+    catch (std::exception &e)
+    {
+        std::cerr << "Exception caught: " << e.what() << std::endl;
+    }
+
+    try
+    {
+        Bureaucrat invalid("Invalid", 0);
+        std::cout << invalid << std::endl;
+    }
+    catch (std::exception &e)
+    {
+        std::cerr << "Exception caught: " << e.what() << std::endl;
+    }
+
+    return 0;
 }

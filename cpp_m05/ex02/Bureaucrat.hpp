@@ -7,37 +7,36 @@ class AForm;
 class Bureaucrat
 {
 private:
-	const std::string _name;
-	int _grade;
+    const std::string _name;
+    int _grade;
 
 public:
-	Bureaucrat(void);
-	Bureaucrat(std::string const &arg_name, int arg_grade);
-	Bureaucrat(const Bureaucrat &other);
-	Bureaucrat &operator=(const Bureaucrat &other);
-	~Bureaucrat();
+    Bureaucrat(void);
+    Bureaucrat(std::string const &arg_name, int arg_grade);
+    Bureaucrat(const Bureaucrat &other);
+    Bureaucrat &operator=(const Bureaucrat &other);
+    ~Bureaucrat();
 
-	const std::string getName() const;
-	int getGrade() const;
+    const std::string getName() const;
+    int getGrade() const;
 
-	void incrementGrade();
-	void decrementGrade();
+    void incrementGrade();
+    void decrementGrade();
 
-	void signForm(AForm &f);
-	void executeForm(AForm const &form) const;
+    void signForm(AForm &f);
+    void executeForm(AForm const &form) const;
 
-	class GradeTooHighException : public std::exception
-	{
-	public:
-		virtual const char *what() const throw();
-	};
-	class GradeTooLowException : public std::exception
-	{
-	public:
-		virtual const char *what() const throw();
-	};
+    class GradeTooHighException : public std::exception
+    {
+    public:
+        virtual const char *what() const throw();
+    };
+    class GradeTooLowException : public std::exception
+    {
+    public:
+        virtual const char *what() const throw();
+    };
+    friend std::ostream &operator<<(std::ostream &out, const Bureaucrat &b);
 };
-
-std::ostream &operator<<(std::ostream &out, const Bureaucrat &b);
 
 #endif
