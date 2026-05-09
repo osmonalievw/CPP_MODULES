@@ -11,9 +11,9 @@ void some_func(T &val)
 }
 
 template <typename A, typename T>
-void iter(A *adressArray, size_t length, T func)
+void iter(A *adressArray, const size_t length, T func)
 {
-	if (!adressArray || !func)
+	if (!adressArray)
 		return;
 	for (size_t i = 0; i < length; i++)
 		func(adressArray[i]);

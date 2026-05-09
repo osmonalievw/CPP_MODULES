@@ -3,13 +3,15 @@
 
 #include <iostream>
 #include <stdexcept>
+#include <ctime>
+#include <cstdlib>
 
 template <typename T>
 class Array
 {
 private:
 	T *array;
-	size_t length;
+	unsigned int length;
 
 public:
 	Array();
