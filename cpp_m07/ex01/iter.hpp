@@ -10,8 +10,8 @@ void some_func(T &val)
 	std::cout << val << std::endl;
 }
 
-template <typename A>
-void iter(A *adressArray, size_t length, void (*func)(A &))
+template <typename A, typename T>
+void iter(A *adressArray, size_t length, T func)
 {
 	if (!adressArray || !func)
 		return;

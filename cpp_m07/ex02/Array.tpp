@@ -23,11 +23,12 @@ Array<T> &Array<T>::operator=(const Array<T> &other)
 {
 	if (this != &other)
 	{
+		T *new_arr = new T[other.length]();
+		for (size_t i = 0; i < other.length; i++)
+			new_arr[i] = other.array[i];
 		delete[] array;
-		length = other.length;
-		array = new T[other.length]();
-		for (size_t i = 0; i < length; i++)
-			array[i] = other.array[i];
+		array = new_arr;
+		length = other.lengthl;
 	}
 	return *this;
 }
