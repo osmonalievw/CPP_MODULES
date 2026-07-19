@@ -1,7 +1,7 @@
 # CPP_MODULES
 This repository contains my C++ projects written at 42 School
 
-![C++ Modules Overview](./header.jpg)
+![C++ Modules Overview](./header.png)
 
 # C++ Modules (00 - 09)
 
